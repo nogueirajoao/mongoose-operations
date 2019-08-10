@@ -15,4 +15,6 @@ beforeEach((done) => {
     });
 });
 
- 
+after(() => {
+     mongoose.connection.close();
+ })
