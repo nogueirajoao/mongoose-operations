@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 before((done) => {
-    mongoose.connect('mongodb+srv://admin:password@dev-1zadm.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+    mongoose.connect('MONGO-URI', { useNewUrlParser: true, useFindAndModify: false });
     mongoose.connection
         .once('open', () => { done(); })
         .on('error', (error) => {
@@ -14,3 +14,5 @@ beforeEach((done) => {
         done();
     });
 });
+
+ 
